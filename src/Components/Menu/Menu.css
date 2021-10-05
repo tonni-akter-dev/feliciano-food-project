@@ -1,0 +1,9 @@
+.btn-design{
+    background-color: #c7a97e;
+border: none;
+}
+.btn-design:hover{
+    background-color: white;
+    border: 1px solid #c7a97e;
+    color: #c7a97e;
+}

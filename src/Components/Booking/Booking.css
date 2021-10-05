@@ -1,0 +1,10 @@
+.booking-bg{
+    background-image: url('https://preview.colorlib.com/theme/feliciano/images/xbg_3.jpg.pagespeed.ic.t-97nUGA6p.jpg');
+    /* background-position: center; */
+    background-size: cover;
+    /* background-blend-mode: overlay; */
+    /* height:100vh; */
+    background-position: fixed;
+    /* color: gray; */
+    /* background-color: rgba(0, 0, 0, 0.664) !important; */
+}

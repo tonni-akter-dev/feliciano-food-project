@@ -1,0 +1,37 @@
+.img-1{
+background-image: url('https://preview.colorlib.com/theme/feliciano/images/xabout.jpg.pagespeed.ic.MGrWED85sH.webp');
+   margin-left: 120px;
+   margin-right: 20px;
+   height: 500px;
+}
+.img-2{
+    background-image: url('https://preview.colorlib.com/theme/feliciano/images/xabout-1.jpg.pagespeed.ic.kE_mUxjyD0.webp');
+    height: 500px;
+}
+.head{
+    visibility: hidden;
+}
+.img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.number{
+    font-size: 40px;
+    font-weight: bolder;
+    color: #C7A97E;
+}
+.hello{
+    font-weight: bolder;
+    color: #C7A97E;
+    font-size:50px;
+text-align: center;
+}
+
+.mar{
+    margin-right: 120px;
+}
+.width{
+    width: 50px;
+    margin-top: 60px;
+}

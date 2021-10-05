@@ -1,0 +1,9 @@
+.navbarDesign{
+    background-image: url('https://preview.colorlib.com/theme/feliciano/images/xbg_1.jpg.pagespeed.ic.KOE9SqsOHI.jpg');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    height:700px;
+    color: gray;
+    background-color: rgba(0, 0, 0, 0.664) !important;
+    }
