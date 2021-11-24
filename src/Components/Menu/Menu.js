@@ -1,35 +1,39 @@
-import Button from "@restart/ui/esm/Button";
+// import Button from "@restart/ui/esm/Button";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Card, Container } from "react-bootstrap";
+import useCart from "../../context/useCart";
+import useCategories from "../../hooks/useCategories";
+import { addToDb } from "../../utilities/fakedb";
 import "./Menu.css";
-
 const Menu = () => {
-  const [categorys, setCategorys] = useState([]);
-  useEffect(() => {
-    fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
-      .then((res) => res.json())
-      .then((data) => setCategorys(data.categories));
-  }, []);
+  const{categorys}=useCategories();
+  const { selectedFood } = useCart();
   return (
     <Container>
       <div className=" text-center">
-            <span className="title" style={{ position: 'relative', top: '80px', fontSize: '120px' }}>Specialities</span>
-                <h1 className="fw-bolder">Our Menu
-</h1>
-            </div>
+        <span className="title" style={{ position: 'relative', top: '80px', fontSize: '120px' }}>Specialities</span>
+        <h1 className="fw-bolder">Our Menu
+        </h1>
+      </div>
       <div className="row">
         {categorys.map((category) => (
-          <Display key={category.idCategory} category={category}></Display>
+          <Display key={category.idCategory} category={category}
+            selectedFood={selectedFood}
+          ></Display>
         ))}
       </div>
     </Container>
   );
 };
-
 function Display(props) {
-  const { strCategory, strCategoryThumb } = props.category;
+  const { strCategory, strCategoryThumb, idCategory } = props.category;
+  const { selectedFood, category } = props;
+  const handleAddToCart = () => {
+    addToDb(strCategory)
+    selectedFood(category);
+  }
   return (
     <div className="col-12 col-md-12 col-lg-6 d-flex">
       <Card>
@@ -44,7 +48,7 @@ function Display(props) {
                 Meat, Potatoes, Rice,
                 <br /> Tomatoe
               </Card.Text>
-             <button className="btn btn-design">Order now</button>
+              <button onClick={() => handleAddToCart(idCategory)} className="btn btn-design">Order now</button>
             </Card.Body>
           </div>
           <div className="col-2 pt-4 fw-bold fs-5 text-danger">

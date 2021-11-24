@@ -9,15 +9,21 @@ import Contact from './Components/Contact/Contact';
 import Stories from './Components/Stories/Stories';
 import Footer from './Components/Footer/Footer';
 import NotFound from './Components/NotFound/NotFound';
+import Booking from './Components/Booking/Booking';
+import Login from './Components/Login/Login';
+import Menu from './Components/Menu/Menu';
+import AuthProvider from './context/AuthProvider';
+import OrderReview from './Components/OrderReview/OrderReview';
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
+    <AuthProvider>
+    <BrowserRouter>
 <NavBar/>
     {/* <Testimony/> */}
         {/* <Display /> */}
-       
+      
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -34,6 +40,19 @@ function App() {
           <Route path='/stories'>
             <Stories></Stories>
           </Route>
+          <Route path='/menu'>
+            <Menu></Menu>
+          </Route>
+          <Route path='/orderReview'>
+          <OrderReview></OrderReview>
+          </Route>
+          <Route path='/booking'>
+            <Booking></Booking>
+          </Route>
+          <Route path='/login'>
+            <Login></Login>
+          </Route>
+     
      <Route path='*'>
 <NotFound></NotFound>
      </Route>
@@ -41,6 +60,7 @@ function App() {
         </Switch>
         <Footer/>
       </BrowserRouter>
+    </AuthProvider>
     </div>
   );
 }
